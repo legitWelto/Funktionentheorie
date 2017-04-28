@@ -1,0 +1,49 @@
+\section{Einführung}
+Funktionentheorie ist Analysis, d.h. Differential- und Integralrechnung von Funktionen, die von einer komplexen Variablen abhängen, insbesondere von Funktionen, welche komplex differenzierbar sind.\\
+Es gibt drei unterschiedliche, aber gleichwertige, sich ergänzende Sichtweisen.
+
+Sei
+$f: D \to \mathds{C},\quad  D \subset \mathds{C} \text{ offen}$
+eine komplexe differenzierbare Fkt.\\
+\begin{itemize}
+	\item[1)] Cauchy (1814-1825) \\
+	Jedes solche f besitzt eine natürliche Integraldarstellung
+	\item[2)] Riemann (1851) \\
+	Jede solche f kann als Abbildung zwischen Bereichen in der komplexen Zahlenebene $\mathds{C}$ aufgefasst werden, welche \textbf{konform} (=winkeltreu) ist.
+	\item[3)] Weierstrass (1841) \\
+	Jede solche f besitzt lokal eine konvergente \textbf{Potenzreihendarstellung}
+\end{itemize}
+
+
+\section{Anwendung in der (analytischen) Zahlentheorie}
+
+Gauss (1792)\\
+Sei $\pi(x) = |\{p \in \mathds{N}|\quad \text{p prim, } p \leq x\}|$ :\\
+Suche Fkt. $f(x)$, sodass:
+\[
+\lim_{x \to \infty} \frac{\pi(x)-f(x)}{f(x)} = 0
+\]
+Vermutung:
+\[
+f(x) = \frac{log(x)}{x}
+\]
+Gauss wusste bereits, dass:
+\[
+\lim_{x \to \infty} \frac{\pi(x)}{x} = 0
+\]
+1896 (de la Vallee-Poussin, Hadamard)\\
+Primzahlsatz:
+\[
+f(x) = \frac{\log(x)}{x}
+\]
+Beweis mit Hilfe der Funktionentheorie.\\
+Riemann (1859)\\
+Betrachte die Reihe:
+\[
+\zeta (s) = \sum^{\infty}_{n=1} \frac{1}{n^s}, s \in \mathds{C}
+\]
+Riemannsche Zeta-Funktion. Nullstellen von $\zeta (s)$ sind $\underbrace{s=-2,-4,-6,...}_{\text{triviale Nullstellen}}$\\
+Vermutung(Riemann):\\
+Alle anderen Nullstellen liegen auf $\{s\in \mathds{C}| Re(s) = \frac{1}{2}\}$\\
+Millenium Prize Problem (Clay Math Institut, 2000).\\
+Primzahlsatz $\Leftrightarrow $ Auf $\{s\in \mathds{C}| Re(s) = 1\}$ liegen keine Nullstellen.

@@ -1,0 +1,148 @@
+\subsection{Einführung}
+
+\begin{beispiel}
+$z = \frac{1}{1+i} = \frac{1}{2} - \frac{i}{2}$\\
+$|z| = \frac{1}{\sqrt{2}}, z = \frac{1}{\sqrt{2}}(\cos(-\pi/4)+i\sin(-\pi/4))$
+\end{beispiel}
+
+\begin{lemma}
+\[
+(\cos\phi + i\sin\phi)(\cos\phi\prime + i\sin\phi\prime))
+\]
+\[ \text{m.a.W}. arg(z*z\prime) = arg(z)+ arg(z\prime)
+\]
+\end{lemma}
+
+\begin{bew}
+Additionstheorem der Winkelfkt.
+\end{bew}
+\begin{bemerkung}
+%%%%%%%Lukas Bild 1%%%%%%
+\end{bemerkung}
+
+\begin{definition}
+$z \in \C $ heißt \textbf{m-te Einheitswurzel}, falls gilt $z^m = , m \in \N$
+\end{definition}
+\begin{satz}
+Zu jedem $m \in \N$ gibt es genau m verschieden m-te Einheitswurzeln:
+\[
+\zeta^m_k := \cos(2\pi\frac{k}{m}+i\sin(2\pi\frac{k}{m}), k=0,\dots,m-1
+\]
+Beweis Übungsaufgabe 3.
+\end{satz}
+
+\subsection{Konvergente Folgen und Reihen}
+\begin{definition}
+Eine Folge $(z)_{nin \N}, z_n \in \C$ heißt \textbf{Nullfolge}, falls $\forall \epsilon > 0 \exists N \in \N$ mit $|z_n| < \epsilon \forall n>N.$ \\
+Eine Folge $(z_n)_{n\in \N}, z_n \in \C$ \textbf{konvergiert gegen z} $\in \C$
+falls die Folge $(z_n-z)_{n\in \N}$ ein Nullfolge ist. Der Grenzwert ist eindeutig bestimmt: $z = \lim_{n \to \infty}z_n$
+\end{definition}
+
+\begin{bemerkung}
+%%%%%%Lukas Bermerkung 1%%%%%%
+\end{bemerkung}
+
+\begin{definition}
+Sei $(z_n)_{n\in\N}, z_n \in \C$, eine Folge.\\
+die Folge der Partialsummen $(S_n)_{n\geq 0}$ mit $S_n := z_0+\dots+z_n$ heißt die der \textbf{Folge $(z_n)$ zugeordnete Reihe}.
+Falls $(S_n)$ konvergert, so heißt $ S:=\lim_{n\to \infty} S_n$ Wert der Reige und wir schreiben $\sum^\infty_{n=0}z_n := S.$\\
+Eine Reihe $\sum^\infty_{n=0} z_n$ heißt \textbf{absolut konvergent} falls die Reihe 
+$\sum |z_n|$ konvergiert.
+\end{definition}
+
+\begin{beispiel}
+%%%%%%%Lukas Beipiel 1
+\end{beispiel}
+
+\begin{satz}
+Eine absolut konvergente Reihe konvergiert.
+\end{satz}
+\begin{bew}
+Analysis 1 und Bemerkung 2.2.1
+\end{bew}
+
+\begin{definition}
+Da die Reihe
+\[
+\sum \frac{z^n}{n!}, \sum \frac{(-1)^n z^{2n}}{(2n)!}, \sum \frac{(-1)^nz^{2n+1}}{(2n+1)!}
+\]
+absolut konvergent für alle $z \in \C$ definieren wir: (exp,cos,sin...)
+\end{definition}
+
+\begin{lemma}[Multiplikatinossatz von Cauchy]
+Summe immer von 0 bis $\infty$ \\
+Seien $\sum z_n, \sum w_m$ absolut konvergente Reihen dann gilt:
+\[
+(\sum z_n)(\sum w_m) = \sum \sum z_k w_n-k
+\]
+und die rechte Seite ist ebenfalls absolut konvergent.
+\end{lemma}
+\begin{bew}
+Kopie des Bew. aus Analysis 1
+\end{bew}
+
+\begin{satz}
+\[
+\exp(z) \exp(w) = exp(z+w) \forall z,w \in \C
+\]
+\end{satz}
+\begin{bew}
+\[
+\sum \frac{z^n}{n!} \sum \frac{w^m}{m!} = \sum \sum \frac{z^kw-k}{n!(n-k)!} = \sum \frac{(z+w)^n}{n!}
+\]
+\end{bew}
+
+\begin{korollar}
+\begin{eqnarray*}
+\exp(z) &\neq& 0\\
+\exp(z)^n &=& exp(nz)\\
+\exp(iz) &=& \cos(z) + i \sin(z)\\
+\cos z &=& 1/2 (\exp(iz)+\exp(-iz))\\
+\sin z &=& 1/(2i) (\exp(iz)-\exp(-iz))\\
+\text{falls z = x+iy} \exp z &=& e^x ( \cos y + i \sin y) \\
+|\exp z | &=& e^x\\
+\cos(z+w) &=& \cos(z)\cos(w) - \sin(z) \sin(w)\\
+\sin(z+w) &=& \cos z \sin w + \sin z \cos w
+\end{eqnarray*}
+\end{korollar}
+
+\begin{bemerkung}
+$\exp(z)$ ist nicht injektiv, da $\exp(2\pi i k ) = 1 \forall k \in \Z$.\\
+Genauer $ \exp(z) = exp(w) \Leftrightarrow z-w \in 2\pi i \Z$ \\
+also $ker \exp = \{z \in \C| \exp z = 1\} = 2\pi i \Z$
+$\exp( z+w) = \exp z \forall z \in \C \Leftrightarrow w \in ker exp$.\\
+Die Expfkt. \textbf{ist periodisch} mit Perioden $2 \pi i k, k \in \Z$.\\
+\begin{eqnarray*}
+\sin z = 0 &\Leftrightarrow & z = k\pi, k \in \Z \\
+\cos z = 0 &\Leftrightarrow & z = (k+ 1/2)\pi, k \in \Z
+\end{eqnarray*}
+\end{bemerkung}
+
+Sei
+\[ 
+S = \{ w \in \C| -\pi < Im(w) \leq \pi\}
+\]
+$\exp|_S$ ist injektiv, wegen Periodizität
+\begin{eqnarray*}
+\{\exp(z)| z \in S\} = \{ \exp z | z \in \C\}\\
+\Rightarrow \{ \exp z | z \in \C \} = \C^{\times}\\
+\exp|_S: S \to \C^{\times}\\
+z \mapsto exp z \text{ ist bijektiv}
+\end{eqnarray*}
+
+\begin{definition}
+%%%%%%%%%Lukas Definition 1%%%%%%%%%%
+\end{definition}
+\begin{satz}
+1)\\
+Es exitiert eine Fkt., der sogenannte \textbf{Hauptzweig des Log}, $ Log: \C^{\times} \to \C$ , welche durch $ exp(Log z) = z und -\pi< Im(Log z) \leq \pi$ eindeutig bestimmt ist.\\
+2)\\
+$\exp w = z \Rightarrow w = Log z + 2 \pi i , k \in \Z$\\
+3)\\
+$Log z = log z$ falls $ z \in \R^{\times}_+$\\
+4)\\
+$Log z = log(|z|) + i Arg(z)$\\
+\end{satz}
+\begin{bew}
+1) folgt aus Bem. 2.10, ebenso 2) aus 1) und Bem. 2.10, 3) klar, 4) folgt aus 1), Kor 2.9 und 1.8
+\end{bew}

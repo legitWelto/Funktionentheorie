@@ -1,0 +1,40 @@
+\subsection{Komplexe Ableitung und Cauchy-Riemannsche Differentialgleichung}
+\textbf{Erinnerung:}\\
+Eine Funktion $f:D \to \C, D \subset \C$ ist stetig, wenn sie stetig ist aufgefasst als Abb. einer TM $D\subset R^2$ in den $\R^2$.\\
+Eine TM $D\subset \R^2$ ist offen, falls zu jedem $q \in D \exists \epsilon > 0: \cup _\epsilon(a) = \{z \in \R^2| |z-a| < \epsilon\} \subset D$.\\
+$a \in \C$ ist Häufungspunkt von D, falls $ \forall \epsilon > 0 \exists z \in D$ mit $|z-a| < \epsilon$ .\\
+
+%%%%Lukas f...f schlange...%%%%
+
+
+\begin{definition}
+Eie Funktion $f: D \to \C$ offen, heißt \textbf{komplex differenzierbar in Punkt $a\in D$}, falls:
+\[
+\lim_{z \to 0} \frac{f(z) -f(a)}{z}-a
+\]
+existiert. Falls der Grenzwert existiert schreiben wir für den Grenzwert:
+\[
+f\prime(a) = \frac{df}{dz}(a)
+\]
+Wenn f in jedem Punkt komplex diffbar ist, dann ist $f\prime$ wieder eine Fkt. auf D.
+\end{definition}
+
+\begin{bemerkung}
+Alternative Formulierung der komplexen Diffbarkeit:
+Die folgenden Aussagen sind äquivalent:
+\begin{itemize}
+	\item
+	1) f ist in $a\in D$ komplex diffbar und hat den Grenzwert l
+	\item
+	2) $\exists f_1$, stetig in a, mit $f(z) = f_1(z)(z-a), f(a) = l$
+	\item
+	3) $\exists g: D \to \C$, stetig in a, mit $f(z) = f(a) + (z-a)l+ g(z), g(a)=0$
+	\item
+	4) $\exists r: D\to \C$, stetig in a, mit $f(z) = f(a) +(z-a)l + r(z), \lim_{z \to a}\frac{r(z)}{z-a}= 0$\\
+	Insbesondere folgt: f ist komplex diffbar in a $\Rightarrow$ f stetig in a.
+\end{itemize}
+\end{bemerkung}
+
+\begin{satz}
+Seien $f,g: D \to \C, D\subset \C$, offen, komplex diffbar auf D, Dann sind, f+g, $\lambda$f ($\lambda \in \C$), $f \cdot g, \frac{f}{g}$ ($g(a) \neq 0$) ebenfalls komplex diffbar. Es gelten die üblichen Ableitungsregeln(Ketten-,Produkt-,Quotientenregel).
+\end{satz}
