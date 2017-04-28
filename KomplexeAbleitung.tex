@@ -1,40 +1,45 @@
 \subsection{Komplexe Ableitung und Cauchy-Riemannsche Differentialgleichung}
 \textbf{Erinnerung:}\\
-Eine Funktion $f:D \to \C, D \subset \C$ ist stetig, wenn sie stetig ist aufgefasst als Abb. einer TM $D\subset R^2$ in den $\R^2$.\\
-Eine TM $D\subset \R^2$ ist offen, falls zu jedem $q \in D \exists \epsilon > 0: \cup _\epsilon(a) = \{z \in \R^2| |z-a| < \epsilon\} \subset D$.\\
-$a \in \C$ ist Häufungspunkt von D, falls $ \forall \epsilon > 0 \exists z \in D$ mit $|z-a| < \epsilon$ .\\
-
-%%%%Lukas f...f schlange...%%%%
+Eine Funktion $f:D \to \C, D \subset \C$ ist stetig, wenn sie stetig ist aufgefasst als Abbildung einer Teilmenge $D\subset \R^2$ in den $\R^2$.\\
+Eine Teilmenge $D\subset \R^2$ ist offen, falls $\forall q \in D \quad \exists \veps > 0: \cup _\veps(a) = \{z \in \R^2| |z-a| < \veps\} \subset D$.\\
+$a \in \C$ ist Häufungspunkt von D, falls $ \forall \veps > 0 \quad \exists z \in D$ mit $|z-a| < \veps$ .\\
+Sei $f: D \to \C, L \in \C,$ dann bedeutet die Schreibweise $\begin{displaystyle}
+\lim_{z \to a} f(z)=l 
+\end{displaystyle}$, dass a ein Häufungspunkt von D ist und $\tilde{f} : D \cup \{a\} \to \C, z\mapsto \left\{
+\begin{array}{ll}
+	f(z)&z\neq a\\
+	l & z=a 
+\end{array}\right. $ ist in a stetig
 
 
 \begin{definition}
-Eie Funktion $f: D \to \C$ offen, heißt \textbf{komplex differenzierbar in Punkt $a\in D$}, falls:
+Eine Funktion $f: D \to \C, \quad D \subset \C$ offen, heißt \textbf{komplex differenzierbar im Punkt $a\in D$}, falls:
 \[
-\lim_{z \to 0} \frac{f(z) -f(a)}{z}-a
+\lim_{z \to a} \frac{f(z) -f(a)}{z-a}
 \]
 existiert. Falls der Grenzwert existiert schreiben wir für den Grenzwert:
 \[
 f\prime(a) = \frac{df}{dz}(a)
 \]
-Wenn f in jedem Punkt komplex diffbar ist, dann ist $f\prime$ wieder eine Fkt. auf D.
+Wenn f in jedem Punkt komplex differenzierbar ist, dann ist $f\prime$ wieder eine Funktion auf D.
 \end{definition}
 
 \begin{bemerkung}
-Alternative Formulierung der komplexen Diffbarkeit:
+Alternative Formulierung der komplexen Differenzierbarkeit:
 Die folgenden Aussagen sind äquivalent:
 \begin{itemize}
-	\item
-	1) f ist in $a\in D$ komplex diffbar und hat den Grenzwert l
-	\item
-	2) $\exists f_1$, stetig in a, mit $f(z) = f_1(z)(z-a), f(a) = l$
-	\item
-	3) $\exists g: D \to \C$, stetig in a, mit $f(z) = f(a) + (z-a)l+ g(z), g(a)=0$
-	\item
-	4) $\exists r: D\to \C$, stetig in a, mit $f(z) = f(a) +(z-a)l + r(z), \lim_{z \to a}\frac{r(z)}{z-a}= 0$\\
-	Insbesondere folgt: f ist komplex diffbar in a $\Rightarrow$ f stetig in a.
+	\item[1)] 
+	f ist in $a\in D$ komplex differenzierbar und hat den Grenzwert l
+	\item[2)]
+	$\exists f_1$, stetig in a, mit $f(z) = f_1(z)(z-a), f(a) = l$
+	\item[3)]
+	$\exists g: D \to \C$, stetig in a, mit $f(z) = f(a) + (z-a)l+ g(z), g(a)=0$
+	\item[4)]
+	$\exists r: D\to \C$, stetig in a, mit $f(z) = f(a) +(z-a)l + r(z), \lim_{z \to a}\frac{r(z)}{z-a}= 0$\\
+	Insbesondere folgt: f ist komplex differenzierbar in a $\Rightarrow$ f stetig in a.
 \end{itemize}
 \end{bemerkung}
 
 \begin{satz}
-Seien $f,g: D \to \C, D\subset \C$, offen, komplex diffbar auf D, Dann sind, f+g, $\lambda$f ($\lambda \in \C$), $f \cdot g, \frac{f}{g}$ ($g(a) \neq 0$) ebenfalls komplex diffbar. Es gelten die üblichen Ableitungsregeln(Ketten-,Produkt-,Quotientenregel).
+Seien $f,g: D \to \C, D\subset \C$, offen, komplex differenzierbar auf D, Dann sind, f+g, $\lambda$f ($\lambda \in \C$), $f \cdot g, \frac{f}{g}$ ($g(a) \neq 0$) ebenfalls komplex differenzierbar. Es gelten die üblichen Ableitungsregeln(Ketten-,Produkt-,Quotientenregel).
 \end{satz}
