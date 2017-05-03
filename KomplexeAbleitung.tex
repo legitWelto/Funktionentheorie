@@ -43,3 +43,224 @@ Die folgenden Aussagen sind äquivalent:
 \begin{satz}
 Seien $f,g: D \to \C, D\subset \C$, offen, komplex differenzierbar auf D, Dann sind, f+g, $\lambda$f ($\lambda \in \C$), $f \cdot g, \frac{f}{g}$ ($g(a) \neq 0$) ebenfalls komplex differenzierbar. Es gelten die üblichen Ableitungsregeln(Ketten-,Produkt-,Quotientenregel).
 \end{satz}
+\begin{beispiel}
+	\leavevmode
+	\begin{itemize}
+		\item[1)]
+		$f: D \to \C, z\mapsto z^n, n \in \Z  $\\
+		ist komplex differenzierbar mit $f\prime(z) = n z^{n-1}$ 
+		$D = \left\{
+		\begin{array}{ll}
+		\C &n > 0\\
+		\C^{\times} &n \leq 0
+		\end{array}\right. $ \\
+		Jedes Polynom $ P(z) = \sum_{k=0}^{n} a_k z^k ,a_k \in \C , a_n \ne 0$ ist komplex differenzierbar und es gilt: $P\prime(z) = \sum^{n - 1}_{k=0} k a_k z^{k-1}$ \\
+		Sei $Q(z)$ ein weiteres Polynom\\
+		$N(Q) = \{z \in \C| Q(z)=0\}$\\
+		Dann ist $f :\C \setminus n(Q) \to \C$ komplex differenzierbar\\
+		$z \mapsto \frac{P(z)}{Q(z)}$
+		\item[2)]
+		Sei $(a_n)_{n \in \N}, a_n \in \N$ eine Folge.\\
+		Annahme: Die Potenzreihe $f(z) = \sum^\infty_{n=0} a_n(z-a)^n$
+		konvergieren in \\
+		$B_{R}(a)=\{z \in \C| |z-a|<R\} R>0\}$ \\
+		Wir werden später sehen, f ist in jedem Punkt von $B_R(a)$ 
+		komplex differenzierbar\\
+	\end{itemize}
+\end{beispiel}
+
+
+\begin{bemerkung}\label{bemer}
+	\leavevmode
+	\begin{itemize}
+		\item
+		Erinnerung aus Analysis II :\\
+		Eine Abbildung von D nach $\R^a, D \subset \R^p$, offen, heißt total
+		differenzierbar in $a \in D$, falls es eine $\R$-lineare Abbildung 
+		$T: \R^p \to \R^q$ gibt, mit:\\
+		$f(x)-f(a) = T(x-a) +r(x), \lim_{x \to a} \frac{r(x)}{|x-a|}= 0$\\
+		T ist eindeutig bestimmt und heißt Jacobi-Abbildung von f in a 
+		oder Tangentialabbildung von f in a oder totales Differential. Wir 
+		schreiben: \\
+		$Tf(a) := T$ \\
+		$ f: D \rightarrow \C , D \subset \C $ offen ist komplex differenzierbar in $a \in D \Leftrightarrow$ f ist in a total differenzierbar ($\C \tilde{=} \R^2$ ) und die Tangentialabbildung ist von der Form : $Tf(a)z = lz$ mit $l = f\prime(a) \in \C$ 
+		\item
+		Erinnerung aus der Linearen Algebra:\\
+		Für eine $\R$-lineare Abb. $T: \C \to \C$ sind folgende Aussagen äquivalent:
+		\begin{itemize}
+			\item[1)]
+			$\exists l \in \C \text{ mit } Tz = lz$
+			\item[2)]
+			T ist $\C$-linear
+			\item[3)]
+			$T(i) = iT(1)$
+			\item[4)]
+			Die Matrix von T bezüglich der Basis $1(=(1,0))$ und die Form \\
+			i(=(0,1)) hat die Form:
+			\[
+			\begin{bmatrix}
+			\a & -\b\\
+			\b & \a
+			\end{bmatrix}
+			\]
+		\end{itemize}
+		\begin{bew}
+			$1 \Leftrightarrow 4$ Wir können die Matrix von t schreiben als:
+			\[ \begin{bmatrix}
+			a & b \\
+			c & d
+			\end{bmatrix}
+			\rightarrow \begin{bmatrix}
+			u \\
+			v
+			\end{bmatrix} = 
+			\begin{bmatrix}
+			a & b \\
+			c & d
+			\end{bmatrix}
+			\begin{bmatrix}
+			x \\
+			y
+			\end{bmatrix}\]
+			\begin{eqnarray*}
+				\text{aus } Tz = lz, l= \a + i\b, z = x + iy = (x,y) \\
+				\Rightarrow T(x,y) =& (\a x - \b y, \a y + \b x)\\
+				=& \begin{bmatrix}
+					a & b \\
+					c & d
+				\end{bmatrix}
+				\begin{bmatrix}
+					x \\
+					y
+				\end{bmatrix}
+			\end{eqnarray*}
+			
+		\end{bew}
+		\item
+		Erinnerung aus Analysis II:\\
+		Die Matrix der Tangentialabbildung ist die Jacobi-Matrix der 
+		partiellen Ableitungen.\\
+		$f:D \to \C, D\subset \C$ offen, total differenzierbar in $a \in D$.\\
+		$f(x,y) = u(x,y) +iv(x,y), z = x+iy=(x,y)$\\
+		$\Rightarrow$ Die partielle Ableitung von u und v in a existieren und die 
+		Jacobi-Matrix hat die Form:
+		\[
+		\begin{bmatrix}
+		\frac{\partial u}{\p x}(a) & \frac{\p v}{\p x}(a)\\
+		\frac{\partial u}{\p y}(a) & \frac{\p v}{\p y}(a)\\
+		\end{bmatrix}	 
+		\]
+		\item
+		Anschaulich
+		%%%%%%%%%%%%%Lukas Bild1%%%%%%%%%%%%%%%%%%%%
+		\begin{eqnarray*}
+			f\prime(a) =&\lim_{h \to 0} \frac{f(a+h)-f(a)}{h}\\
+			=& \lim_{h\to 0} \frac{f(a+ih)-f(a)}{ih}
+		\end{eqnarray*}
+		Wobei h immer reell sei,
+		$\Rightarrow f\prime(a) = \p_1 u + i\p_1 v = \frac{1}{i}(\p_2 u 
+		+ i \p_2 v)$
+	\end{itemize}
+\end{bemerkung}
+
+\begin{satz}[Cauchy, Riemann]
+	Sei $f:D\to \C, D\subset \C$, offen, $ a\in D$. Dann sind äquivalent:
+	\begin{itemize}
+		\item[1)]
+		f ist in a komplex differenzierbar
+		\item[2)]
+		f ist in a total differenzierbar und für $u = Re(f), v = Im(f)$ gelten die 
+		\textbf{Cauchy-Riemannschen-Differential Gleichungen}:
+		\begin{eqnarray*}
+			\frac{\p u}{\p x}(a) &=& \frac{\p v}{\p y}(a) \\
+			\frac{\p u}{\p y}(a) &=& -\frac{\p v}{\p x}(a)
+		\end{eqnarray*}
+		Es gilt dann:
+		\[
+		f\prime(a) = \frac{\p u}{\p x}(a) + i \frac{\p v}{\p x}(a)
+		= \frac{\p v}{\p y}(a) -i \frac{\p u}{\p y}(a)
+		\]
+		\item[3)]
+		f ist in a total differenzierbar und die Tangentialabbildung ist $\C$-linear
+	\end{itemize} 
+\end{satz}
+
+\begin{bew}
+	1 $\Leftrightarrow$ 3: Bemerkung \ref{bemer} \\
+	2 $\Leftrightarrow$ 3: Bemerkung \ref{bemer}
+\end{bew}
+
+\begin{satz}\label{satz}
+	Seien $u,v:\R^2 \to \R$, stetig differenzierbar. Dann ist $f:=u+iv: D \to \C$ total 
+	differenzierbar.\\
+	Gilt ausserdem: $ \p_x u= \p_y v$, $\p_x v = -\p_y u$ überall in D, so ist 
+	f in jedem Punkt von D komplex differenzierbar.
+\end{satz}
+\begin{bemerkung}
+	Erste Aussage folgt aus Analysis II. Die zweite Aussage folgt aus dem Satz.
+\end{bemerkung}
+\begin{beispiel}
+	\begin{itemize}
+		\item[1)] Wir wissen $f(z) = z^2$ ist komplex differenzierbar
+		$f(z) = z^2 = \underbrace{x^2 - y^2}_{u(x,y)}  + \underbrace{i 2xy}_{v(x,y)}$\\
+		\[\p_x u = 2x = \p_yv = 2x\]
+		\[\p_y u = -2y = -\p_xv = -2y\]
+		\item[2)] $f(z)=x^3y^2+ix^2y^2$ ist überall total differenzierbar\\
+		In $a = (\a,\b)$ gilt:
+		\[ \p_xu(a) = 3\a^2\b^2 = \p_yv(a)=3\a^2\b^2 \]
+		\[ \p_yu(a) = 2\a^3\b = -\p_xv(a)= -2\a\b^3 \]
+		\[\Rightarrow \a\b(\a^2+\b^2)=0\]
+		\[\Rightarrow \a=0 \text{ oder } \b = 0\]
+		f ist nur auf den Koordinatenachsen differenzierbar
+		\item[3)]
+		$f(z) = \overline{z} = x +iy$
+		\[\p_xu= 1 \ne \p_yv = -1\]
+		f ist stetig in $\C$ aber nirgends komplex differenzierbar
+		\item[4)]
+		$\exp,\sin\cos$ sind in ganz $\C$ komplex differenzierbar: 
+		\[\exp(z) = e^x\cos(y)+i e^x \sin(y)\]
+		\[\p_xu = e^x\cos(y)= \p_y v\]
+		\[\p_yu = -e^x\sin(y)= -\p_x v\]
+		\[\exp\prime(z) =e^x \cos(y)+ie^x\sin(y)= \exp(z)\]
+		
+	\end{itemize}
+\end{beispiel}
+
+\textbf{Proposition:}\\
+Alternative Formulierung von Satz \ref{satz}:\\
+Sei $ f:D\to \C, D \subset \C$ offen, f stetig und total diffbar.\\
+Wir definieren:
+\[
+\frac{\p f}{\p z}:= \frac{1}{2} (\frac{\p f}{\p x}-i\frac{\p f}{\p y}) 
+\]
+\[
+\frac{\p f}{\p \overline{z}}:= \frac{1}{2} (\frac{\p f}{\p x}+i\frac{\p f}{\p y})
+\]
+
+$\frac{\p f}{\p z},\frac{\p \overline{f}}{\p \overline{z}}$ sind formale Ableitungen\\
+Dann gilt: f ist komplex differenzierbar $\Leftrightarrow \left\{
+\begin{array}{ll}
+\frac{\p f}{\p \overline{z}}(a) = 0\\
+\frac{\p f}{\p z}(a) = f(a)
+\end{array}\right. \forall a \in D $
+\begin{bew}
+	nach Satz \ref{satz}:\\
+	f ist komplex differenzierbar $\Leftrightarrow f = u+iv, \p_xu = \p_yv,\p_xv=-\p_yu$\\
+	\[f = \p_xu +i\p_xv=\frac{1}{i}(\p_yu+i\p_yv) \Leftrightarrow f\prime=\p_xf=\frac{1}{i}\p_yf\]
+	\[\Rightarrow \frac{\p f}{\p \overline{z}}=\frac{1}{2} (\p_xf+i\p_yf)= \frac{1}{2} (f\prime - f\prime)=0\]
+	\[\frac{\p f}{\p z}=\frac{1}{2} (\p_xf-i\p_yf)= \frac{1}{2} (f\prime + f\prime)=f\prime\]
+\end{bew}
+
+\begin{definition}
+	Eine Funktion $f:D\to \C$, offen, welche in jedem Punkt von D komplex differenzierbar ist, heißt auch \textbf{holomorph in D} (oder analytisch oder regulär).\\
+	f ist holomorph in $ a\in D$, wenn es eine offene Umgebung $ U \subset D$ von a gibt , in der f holomorph ist.\\
+	f heißt \textbf{antiholomorph in D}, falls $\overline{f}$ holomorph in D.\\
+	\[
+	\mathcal{O}(D):= \{f: D\subset \C|\text{ f holomorph in D}\}
+	\]
+\end{definition}
+
+\begin{bemerkung}
+	$\mathcal{O}(D) \subset$ C(D) ist $\C$-Unteralgebra.\\
+	$e \in \mathcal{O}(D)$ ist Einheit $\Leftrightarrow$ e hat nirgends Nullstellen$ f \in \mathcal{O}(D) \Leftrightarrow \p_z f = 0$
+\end{bemerkung}
